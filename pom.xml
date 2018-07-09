@@ -59,6 +59,10 @@
             <id>repo.jenkins-ci.org</id>
             <url>http://repo.jenkins-ci.org/releases</url>
         </repository>
+        <repository>
+            <id>repo.spring.plugins</id>
+            <url>http://repo.spring.io/plugins-release/</url>
+        </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>

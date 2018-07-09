@@ -1,10 +1,7 @@
 package org.jenkinsci.plugins.buildwithparameters;
 
-import hudson.model.BooleanParameterValue;
-import hudson.model.ParameterValue;
-import hudson.model.PasswordParameterValue;
-import hudson.model.StringParameterValue;
-import hudson.model.TextParameterValue;
+import hudson.model.*;
+
 import java.util.List;
 
 public class BuildParameter {
@@ -47,6 +44,8 @@ public class BuildParameter {
             this.value = ((TextParameterValue) parameterValue).value;
         } else if (parameterValue instanceof BooleanParameterValue) {
             this.value = String.valueOf(((BooleanParameterValue) parameterValue).value);
+        } else if (parameterValue instanceof RunParameterValue) {
+            this.value = String.valueOf(((RunParameterValue) parameterValue).getRunId());
         } else if (parameterValue instanceof PasswordParameterValue) {
             this.value = JOB_DEFAULT_PASSWORD_PLACEHOLDER;
         }
